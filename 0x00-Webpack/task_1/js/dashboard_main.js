@@ -10,8 +10,12 @@ $(document).ready(function() {
   $("body").append("<p id='count'></p>");
   $("body").append("<p>Copyright - Holberton School</p>");
 
-  $("button").on('click', _.debounce(() => {
+  function updateCounter() {
     count += 1;
-    $('#count').replaceWith(count + " clicks on the button");
-  }, 250));
+    $('button').click(function() {
+      ('#count').replaceWith(`{count} clicks on the button`);
+    });
+  }
+
+  const debouncedFunction = _.debounce(updateCounter, 250);
 });
