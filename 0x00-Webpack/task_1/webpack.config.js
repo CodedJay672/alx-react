@@ -1,3 +1,4 @@
+//webpack config file
 const path = require('path');
 
 module.exports = {
@@ -6,6 +7,5 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public')
-  },
-
-}
+  }
+};
