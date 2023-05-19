@@ -13,7 +13,7 @@ $(document).ready(function() {
   function updateCounter() {
     $('button').on('click', _.debounce(function() {
       count++;
-      $('#count').text(count + ' clicks on the button')
+      $('#count').text(`${count} clicks on the button`)
     }, 1000));
   }
 });
