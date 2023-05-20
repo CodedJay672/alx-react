@@ -10,7 +10,7 @@ $(document).ready(function() {
   $('body').append('<button>Click here to get started</button>');
   $('body').append('<p id="count"></p>');
   $('body').append('<p>Copyright - Holberton School</p>');
-  $('body').prepend('<div id="logo" width="200" height="200"></div>');
+  $('body').prepend('<div id="logo" style="width: 200px;height: 200px;"></div>');
 
   function updateCounter() {
       count++;
