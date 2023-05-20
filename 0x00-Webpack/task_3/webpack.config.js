@@ -29,9 +29,10 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
   },
   optimization: {
-    runtimeChunk: 'single',
+    runtimeChunk: 'all',
   },
   devServer: {
+    contentBase: './public',
     port: 8564,
     open: true,
   },
