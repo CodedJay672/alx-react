@@ -1,0 +1,34 @@
+.App-logo {
+  height: 20vmin;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(2px + 2vmin);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(230, 41, 41);
+  border-bottom: 3px solid rgb(230, 41, 41);
+}
+
+.App-body {
+  font-size: 1rem;
+  min-height: 65vmin;
+  padding: 40px;
+}
+
+.App-footer {
+  text-align: center;
+  padding: 5px;
+  font-size: .75rem;
+  font-style: italic;
+  border-top: 3px solid rgb(230, 41, 41);
+}
