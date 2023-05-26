@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/task_4/static/css/main.7ab04758.css",
+    "main.js": "/task_4/static/js/main.db755082.js",
+    "static/js/787.545aecf5.chunk.js": "/task_4/static/js/787.545aecf5.chunk.js",
+    "static/media/holberton-logo.jpg": "/task_4/static/media/holberton-logo.a74edfdfa4e1be32bf0c.jpg",
+    "static/media/close-icon.png": "/task_4/static/media/close-icon.a477aa217e8a9da745e4.png",
+    "index.html": "/task_4/index.html",
+    "main.7ab04758.css.map": "/task_4/static/css/main.7ab04758.css.map",
+    "main.db755082.js.map": "/task_4/static/js/main.db755082.js.map",
+    "787.545aecf5.chunk.js.map": "/task_4/static/js/787.545aecf5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ab04758.css",
+    "static/js/main.db755082.js"
+  ]
+}
