@@ -8,19 +8,16 @@ describe('<App />', () => {
 
   it('checks if a App renders a div with the className App-header', () => {
     const wrapper = shallow(<App />);
-    const headerDiv = <div className="App-header" />;
-    expect(wrapper.containsMatchingElement(headerDiv)).toEqual(true);
+    expect(wrapper.find('div.App-header').hasClass('App-header')).toEqual(true);
   });
 
   it('checks if a div with className App-body is present', () => {
     const wrapper = shallow(<App />);
-    const bodyDiv = <div className="App-body" />;
-    expect(wrapper.containsMatchingElement(bodyDiv)).toEqual(true);
+    expect(wrapper.find('div.App-body').hasClass('App-body')).toEqual(true);
   });
 
   it('checks if div with className App-footer is present', () => {
     const wrapper = shallow(<App />);
-    const footerDiv = <div className="App-footer" />;
-    expect(wrapper.containsMatchingElement(footerDiv)).toEqual(true);
+    expect(wrapper.find('div.App-footer').hasClass('App-footer')).toEqual(true);
   });
 });
