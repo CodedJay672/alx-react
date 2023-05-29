@@ -1,19 +1,18 @@
-import $ from 'jquery';
-import logo from './holberton-logo.jpg';
-import './index.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Notifications from './Notifications';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-function myLogo() {
-  const myImage = new Image();
-  myImage.src = logo;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Notifications />
+    <App />
+  </React.StrictMode>
+);
 
-  myDiv.append(myImage);
-
-  return myImage;
-}
-
-$(document).ready(function() {
-  $('body').append('<div class="App-header"><h1>School dashboard</h1></div>');
-  $('.App-header').prepend(myLogo());
-  $('body').append('<div class="App-body"><p>login to access full dashboard</p></div>');
-  $('body').append('<div class="App-footer"><p>Copyright 2020 - holberton school</p></div>');
-});
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
