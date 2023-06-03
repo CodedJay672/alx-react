@@ -1,0 +1,41 @@
+.Notifications, div.menuItem {
+  width: 30%;
+  font-size: smaller;
+  border: 1px dashed rgb(230, 41, 41);
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+div.Notifications {
+  margin-top: 3%;
+  background-color: white;
+}
+
+div.menuItem {
+  border: none;
+  text-align: right;
+}
+
+li {
+  color: red;
+}
+
+[data-notification-type="default"] {
+  color: blue;
+}
+
+[data-notification-type="urgent"] {
+  color: red;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+input {
+  margin: 0 1rem 0 .5rem;
+  border-color: 1px solid #e3e3e3;
+  width: 8rem;
+}
