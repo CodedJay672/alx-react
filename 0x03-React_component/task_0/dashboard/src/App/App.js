@@ -27,13 +27,12 @@ const listNotifications = [
 
 // main App
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
+  listCourses = this.props.listCourses;
+  listNotifications = this.props.listNotifications;
   
-  isLoggedIn = this.props.isLoggedIn;
-
   render() {
+    const isLoggedIn = this.props.isLoggedIn;
+
     return (
       <>
         <Notifications listNotifications={listNotifications}/>
