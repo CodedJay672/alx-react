@@ -40,10 +40,6 @@ class App extends Component {
     if (event.ctrlKey && event.key === 'h') {
       alert('Logging you out');
       this.props.logOut();
-
-
-      
-      event.preventDefault();
     };
   }
 
@@ -83,13 +79,10 @@ App.defaultProps = {
   logOut: () => {}
 };
 
-App.propTypes = {
-  logOut: PropTypes.func
-}
-
 // prop validation
 App.propTypes ={
-  isLoggedIn: PropTypes.bool
+  isLoggedIn: PropTypes.bool,
+  logOut: PropTypes.func
 };
 
 export default App;

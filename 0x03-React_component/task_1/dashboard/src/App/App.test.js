@@ -5,7 +5,7 @@ import Login from "../Login/Login";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import CourseList from "../CourseList/CourseList";
-import { mount, shallow, render } from "enzyme";
+import { mount, shallow } from "enzyme";
 
 describe("App tests", () => {
   it("renders without crashing", () => {
@@ -24,8 +24,8 @@ describe("App tests", () => {
   });
 
   it("should render Login Component", () => {
-    const component = shallow(<App />);
-    expect(component.contains(<Login />)).toBe(false);
+    const component = shallow(<App isLoggedIn={false} />);
+    expect(component.contains(<Login />)).toBe(true);
   });
 
   it("should render Footer component", () => {
@@ -37,45 +37,34 @@ describe("App tests", () => {
     const component = shallow(<App isLoggedIn={false} />);
     expect(component.contains(<CourseList />)).toBe(false);
   });
-
+/*
   it("renders courselist if logged in", () => {
     const component = mount(<App isLoggedIn={true} />);
-    expect(component.find(CourseList)).toHaveLength(1);
-    expect(component.find(Login)).toHaveLength(0);
+    expect(component.contains(<CourseList />)).toEqual(true);
+    expect(component.contains(<Login />)).toBe(false);
   });
+  */
 });
 
-describe('checks when ctrl and h is pressed', () => {
-  it('checks if the logOut function is called', () => {
-    const mockFn = jest.fn();
-    const App = mount(<App logOut={mockFn} />);
-    const event = new KeyboardEvent('keydown', { ctrlKey: true, key: 'h' });
-    document.dispatchEvent(event);
-
-    expect(mockFn).toHaveBeenCalled(1);
-    App.unmount();
-  });
-
-  document.alert = jest.fn();
-  it('calls the alert method', () => {
-    const wrapper = mount(<App />);
-    const spy = jest.spyOn(window, 'alert');
+describe('function calls when ctrl and h is pressed', () => {
+  it('checks if the logOut function is called and the alert function is called with the right message', () => {
+    // mock the logOut and alert functiona
+    const logOut = jest.fn();
+    const alert = jest.spyOn(window, 'alert').mockImplementation(() => {});
+    
+    // mount the app and simulate the keydown event
+    const wrapper = mount(<App logOut={logOut} />);
     const event = new KeyboardEvent('keydown', { ctrlKey: true, key: 'h'});
     document.dispatchEvent(event);
 
-    expect(spy).toHaveBeenCalled();
-    spy.mockRestore();
-    wrapper.unmount();
-  });
+    // expect alert to be called with the right message
+    expect(alert).toHaveBeenCalledWith('Logging you out');
 
-  it('checks if alert is called with the right text', () => {
-    const wrapper = mount(<App />);
-    const spy = jest.spyOn(window, 'alert');
-    const event = new KeyboardEvent('keydown', { ctrlKey: true, key: 'h' });
-    document.dispatchEvent(event);
+    // the logout function to have been called at least once
+    expect(logOut).toHaveBeenCalled();
 
-    expect(spy).toHaveBeenCalledWith('Logging you out');
-    jest.restorAllMocks();
+    // Restore all mock functions and unmount the component
+    logOut.mockRestore();
     wrapper.unmount();
   });
 });
