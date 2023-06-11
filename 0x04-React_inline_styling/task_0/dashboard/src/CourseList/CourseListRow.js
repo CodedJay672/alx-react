@@ -1,41 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 
 const headerColor = {
-  backgroundColor: '#f5f5f5ab'
+  backgroundColor: '#deb5b545'
 }
 
 const rowColor = {
-  backgroundColor: '#deb5b545'
+  backgroundColor: '#f5f5f5ab'
 }
 
 
 function CourseListRow(props) {
-  const isHeader =  props.isHeader;
-  const textFirstCell = props.textFirstCell;
-  const textSecondCell = props.textSecondCell;
-  
-  if (isHeader) {
-    return (
-      <tr style={ isHeader ? headerColor : rowColor }>
-        {textSecondCell === null ?
+  const { isHeader, textFirstCell, textSecondCell } = props;
+
+  return (
+    <tr style={isHeader ? headerColor : rowColor }>
+      {isHeader ? (
+        textSecondCell === null ?
           (<th colSpan="2">{textFirstCell}</th>) :
           (<>
             <th>{textFirstCell}</th>
             <th>{textSecondCell}</th>
-          </>)}
-      </tr>
-    );
-  } else {
-    return (
-      <tr style={ isHeader ? headerColor : rowColor }>
-        <td>{textFirstCell}</td>
-        <td>{textSecondCell}</td>
-      </tr>
-    );
+          </>)
+      ) : (
+          <>
+            <td>{textFirstCell}</td>
+            <td>{props.textSecondCell}</td>
+          </>
+          )}
+    </tr>
+  )
   }
-};
 
 // Type validation
 CourseListRow.propTypes = {
