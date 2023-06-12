@@ -2,6 +2,9 @@ import React from "react";
 import { mount, shallow } from 'enzyme';
 import CourseList from "./CourseList";
 import CourseListRow from "./CourseListRow";
+import { StyleSheetTestUtils } from "aphrodite";
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 // list of courses to pass into the Courselist component
 const listCourses = [

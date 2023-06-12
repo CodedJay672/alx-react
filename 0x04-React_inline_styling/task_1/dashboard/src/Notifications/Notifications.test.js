@@ -3,6 +3,9 @@ import { shallow, mount } from 'enzyme';
 import Notifications from './Notifications';
 import NotificationItem from './NotificationItem';
 import { getLatestNotification } from '../utils/utils';
+import { StyleSheetTestUtils } from 'aphrodite';
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 // Array for Notification List
 const listNotifications = [
@@ -22,7 +25,7 @@ describe('checks notification rendition', () => {
     wrapper.find("ul").forEach((node) => {
       expect(node.equals(<NotificationItem />));
     });
-    expect(wrapper.find("ul").childAt(0).html()).toEqual('<li data-notification-type="default">New course available</li>');
+    expect(wrapper.find("ul").childAt(0).html()).toEqual('<li data-notification-type="default" class=\"default_1tsdo2i\">New course available</li>');
     expect(wrapper.find("ul").childAt(1).html()).toEqual('<li data-notification-type="urgent">New resume available</li>');
     expect(wrapper.find("ul").childAt(2).html()).toEqual(`<li data-notification-type=\"urgent\">${getLatestNotification()}</li>`);
   });

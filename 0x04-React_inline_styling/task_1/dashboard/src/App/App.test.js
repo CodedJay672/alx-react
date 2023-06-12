@@ -6,6 +6,9 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import CourseList from "../CourseList/CourseList";
 import { mount, shallow } from "enzyme";
+import { StyleSheetTestUtils } from "aphrodite";
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 describe("App tests", () => {
   it("renders without crashing", () => {

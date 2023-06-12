@@ -2,6 +2,9 @@ import React from "react";
 import { mount } from 'enzyme';
 import BodySection from "./BodySection";
 import BodySectionWithMarginBottom from "./BodySectionWithMarginBottom";
+import { StyleSheetTestUtils } from "aphrodite";
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 describe('checks that the component renders appropriately', () => {
   it('checks that the component passes the right props to the BodySection tag', () => {
