@@ -1,3 +1,4 @@
+import { Seq } from "./node_modules/immutable/dist/immutable";
 
 export default function printBestStudents(object) {
   const seq = Seq(object);
