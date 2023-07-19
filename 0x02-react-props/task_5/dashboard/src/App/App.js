@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
@@ -26,25 +26,31 @@ const listNotifications = [
 
 
 // main App
-function App(props) {
-  const isLoggedIn = props.isLoggedIn;
+class App extends Component {
+  constructor(props) {
+    const isLoggedIn = this.props.isLoggedIn;
+    const listCourses = this.props.listCourses;
+    const listNotifications = this.props.listNotifications;
+  }
 
-  return (
-    <>
-      <Notifications listNotifications={listNotifications}/>
-      <div className='App'>
-        <div className="App-header">
-          <Header />
+  render() {
+    return (
+      <>
+        <Notifications listNotifications={listNotifications}/>
+        <div className='App'>
+          <div className="App-header">
+            <Header />
+          </div>
+          <div className="App-body">
+            {isLoggedIn ? (<CourseList listCourses={listCourses} />) : (<Login />)}
+          </div>
+          <div className="App-footer">
+            <Footer />
+          </div>
         </div>
-        <div className="App-body">
-          {isLoggedIn ? (<CourseList listCourses={listCourses} />) : (<Login />)}
-        </div>
-        <div className="App-footer">
-          <Footer />
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 // propDefault values

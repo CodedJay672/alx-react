@@ -15,9 +15,9 @@ describe('checks notification rendition', () => {
     wrapper.find("ul").forEach((node) => {
       expect(node.equals(<NotificationItem />));
     });
-    expect(wrapper.contains(<li data-notification-type="default">New course available</li>)).toBe(true);
-    expect(wrapper.contains(<li data-notification-type="urgent">New resume available</li>)).toBe(true);
-    expect(wrapper.contains(<li data-urgent="true">${getLatestNotification()}</li>)).toBe(true);
+    expect(wrapper.containsAnyMatchingElements([<li data-notification-type="default">New course available</li>])).toBe(true);
+    expect(wrapper.containsAnyMatchingElements([<li data-notification-type="urgent">New resume available</li>])).toBe(true);
+    expect(wrapper.containsAnyMatchingElements([<li data-urgent="true">${getLatestNotification()}</li>])).toBe(true);
   });
   
   it("renders an unordered list", () => {

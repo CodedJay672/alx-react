@@ -15,11 +15,11 @@ const style = StyleSheet.create({
     flexDirection: 'column'
   },
   intro: {
-    fontSize: '1.7rem',
+    fontSize: '1rem',
     alignSelf: 'flex-end'
   },
   notifications: {
-    fontSize: '1.5rem',
+    fontSize: '.85rem',
     backgroundColor: 'white',
     border: '1px dashed red'
   },

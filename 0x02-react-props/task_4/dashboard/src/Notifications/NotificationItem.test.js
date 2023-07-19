@@ -4,7 +4,7 @@ import NotificationItem from './NotificationItem';
 
 describe('<NotificationItem />', () => {
   it('NotificationItem renders without crashing', () => {
-    shallow(<NotificationItem type='default' />);
+    shallow(<NotificationItem />);
   });
 
   it('checks the NotificationItem component', () => {

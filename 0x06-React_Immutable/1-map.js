@@ -5,4 +5,11 @@ const getImmutableObject = (obj) => {
   return map;
 };
 
-export default getImmutableObject;
+const map = getImmutableObject({
+  fear: true,
+  smell: -1033575916.9145899,
+  wall: false,
+  thing: -914767132
+});
+
+console.log(map);

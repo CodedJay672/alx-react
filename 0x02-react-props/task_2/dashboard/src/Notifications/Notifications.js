@@ -12,8 +12,8 @@ function Notifications() {
       </button>
       <p>Here is the list of notifications</p>
       <ul>
-        <NotificationItem type="default" value="New course available" />
-        <NotificationItem type="urgent" value="New resume available" />
+        <NotificationItem type="urgent" value="New course available" />
+        <NotificationItem type="default" value="New resume available" />
         <NotificationItem html={{__html: getLatestNotification()}} />
       </ul>
     </div>

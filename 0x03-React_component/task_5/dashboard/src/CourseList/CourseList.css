@@ -1,0 +1,14 @@
+table#CourseList {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  border: 1px solid grey;
+}
+
+table#CourseList thead tr {
+  border-bottom: 1px solid grey;
+}
+
+table#CourseList thead tr:first-of-type {
+  text-align: center;
+}

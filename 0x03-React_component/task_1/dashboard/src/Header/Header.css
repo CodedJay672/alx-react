@@ -1,0 +1,15 @@
+.App-logo {
+  height: 20vmin;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(2px + 2vmin);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(230, 41, 41);
+  border-bottom: 3px solid rgb(230, 41, 41);
+  padding-bottom: 30px;
+}

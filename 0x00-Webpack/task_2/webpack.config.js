@@ -1,4 +1,6 @@
 //webpack config file
+
+//import path
 const path = require('path');
 
 module.exports = {

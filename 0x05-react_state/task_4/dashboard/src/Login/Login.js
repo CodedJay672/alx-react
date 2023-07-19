@@ -70,7 +70,12 @@ const style = StyleSheet.create({
     fontSize: '1.3rem',
     fontWeight: 'bold',
     padding: '10px 0',
-    marginRight: '20px'
+    marginRight: '20px',
+    '@media only screen and (max-width: 900px)': {
+      display: 'block',
+      marginBottom: '20px',
+      width: '90%'
+    }
   },
   input: {
     marginLeft: '10px',
