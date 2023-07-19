@@ -1,6 +1,4 @@
 import getAllNotificationsByUser from "./notifications";
-import { shallow } from 'enzyme';
-
 
 describe('getAllNotificationsByUser function test', () => {
   it('test function with custom return value', () => {
