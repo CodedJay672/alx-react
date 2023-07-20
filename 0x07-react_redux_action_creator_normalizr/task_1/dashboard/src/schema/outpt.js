@@ -1,3 +1,3 @@
-import { normalizedData } from "./notifications.js";
+import { normalizedData } from "./notifications";
 
 console.log(normalizedData);

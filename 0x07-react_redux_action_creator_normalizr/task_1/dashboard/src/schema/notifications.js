@@ -1,12 +1,12 @@
-import * as notificationData from '../../../../notifications.json' assert { type: 'json' };
+const notificationData = require('../../../../notifications.json');
 import { normalize, schema } from 'normalizr';
 
 
 // setup notification schema using normalizr
 // create the user, message, and notification entities
 const user = new schema.Entity('users');
-const message = new schema.Entity('messages', {}, { idAttribute: 'guid' });
-const notification = new schema.Entity('notifications', {}, {
+const message = new schema.Entity('messages', { idAttribute: 'guid' });
+const notification = new schema.Entity('notifications', {
   author: user,
   context: message,
 });

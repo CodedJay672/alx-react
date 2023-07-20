@@ -23,7 +23,7 @@ describe('getAllNotificationsByUser function test', () => {
   });
 
   it('normalized data returns correct result', () => {
-    expect(normalizedData.result).toContain(
+    expect(normalizedData.result).toBe([
     "5debd76480edafc8af244228",
     "5debd764507712e7a1307303",
     "5debd76444dd4dafea89d53b",
@@ -38,6 +38,6 @@ describe('getAllNotificationsByUser function test', () => {
     "5debd764af0fdd1fc815ad9b",
     "5debd76468cb5b277fd125f4",
     "5debd764de9fa684468cdc0b",
-    );
+    ]);
   });
 })
