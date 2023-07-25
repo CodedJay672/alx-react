@@ -22,8 +22,8 @@ describe('getAllNotificationsByUser function test', () => {
     ));
   });
 
-  /* it('normalized data returns correct result', () => {
-    expect(normalizedData.result).toBe([
+  it('normalized data returns correct result', () => {
+    expect(normalizedData.result).toStrictEqual([
     "5debd76480edafc8af244228",
     "5debd764507712e7a1307303",
     "5debd76444dd4dafea89d53b",
@@ -39,9 +39,35 @@ describe('getAllNotificationsByUser function test', () => {
     "5debd76468cb5b277fd125f4",
     "5debd764de9fa684468cdc0b",
     ]);
-  }); */
+  });
 
-  it('checks normalized data for the right user based on userId', () => {
-    expect()
-  })
+  it('contains correct user information', () => {
+    expect(normalizedData.entities.users['5debd764a7c57c7839d722e9'])
+    .toEqual({
+      age: 25,
+      email: "poole.sanders@holberton.nz",
+      id: "5debd764a7c57c7839d722e9",
+      name: { first: "Poole", last: "Sanders" },
+      picture: "http://placehold.it/32x32"
+    })
+  });
+
+  it('checks if the right message is returned', () => {
+    expect(normalizedData.entities.messages['efb6c485-00f7-4fdf-97cc-5e12d14d6c41'])
+    .toEqual({
+      guid: "efb6c485-00f7-4fdf-97cc-5e12d14d6c41",
+      isRead: false,
+      type: "default",
+      value: "Cursus risus at ultrices mi."
+    })
+  });
+
+  it('checks for the right notifications', () => {
+    expect(normalizedData.entities.notifications['5debd7642e815cd350407777'])
+    .toEqual({
+      author: "5debd764f8452ef92346c772",
+      context: "3068c575-d619-40af-bf12-dece1ee18dd3",
+      id: "5debd7642e815cd350407777"
+    })
+  });
 })

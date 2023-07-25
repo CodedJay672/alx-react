@@ -1,3 +1,3 @@
-import output from "./notifications";
+import { normalizedData } from "./notifications";
 
-console.log(output.entities.notifications.undefined)
+console.log(normalizedData.entities.notifications['5debd76480edafc8af244228']);
