@@ -1,3 +1,3 @@
-import { normalizedData } from "./notifications";
+import { getAllNotificationsByUser } from "./notifications";
 
-console.log(normalizedData);
+console.log(getAllNotificationsByUser("5debd764a7c57c7839d722e9"));

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "dev": "npx babel-node",
     "start": "webpack-dev-server --mode development --config config/webpack.config.js",
     "test": "jest",
     "test-watch": "jest --watch"
@@ -13,9 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/node": "^7.22.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "aphrodite": "^2.4.0",
+    "normalizr": "^3.6.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
