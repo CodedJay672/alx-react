@@ -7,7 +7,9 @@ import {
   HIDE_NOTIFICATION_DRAWER
 } from "./uiActionTypes";
 
-export const login = (email, password) => {
+import { bindActionCreators } from 'redux';
+
+export const login = bindActionCreators((email, password) => {
   return {
     type: LOGIN,
     user: {
@@ -15,7 +17,7 @@ export const login = (email, password) => {
       password
     }
   };
-}
+}, dispatch)
 
 
 export const logout = () => {
